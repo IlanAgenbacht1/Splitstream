@@ -1,0 +1,2106 @@
+[
+  {
+    "name": "com.google.protobuf.Any",
+    "methods": [
+      {
+        "name": "newBuilder",
+        "parameterTypes": []
+      }
+    ]
+  },
+  {
+    "name": "com.google.protobuf.ExtensionRegistry",
+    "methods": [
+      {
+        "name": "getEmptyRegistry",
+        "parameterTypes": []
+      }
+    ]
+  },
+  {
+    "name": "com.oracle.labs.mlrg.olcut.provenance.impl.ConfiguredObjectProvenanceImpl",
+    "methods": [
+      {
+        "name": "<init>",
+        "parameterTypes": [
+          "java.util.Map"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "com.oracle.labs.mlrg.olcut.provenance.primitives.BooleanProvenance"
+  },
+  {
+    "name": "com.oracle.labs.mlrg.olcut.provenance.primitives.CharProvenance"
+  },
+  {
+    "name": "com.oracle.labs.mlrg.olcut.provenance.primitives.DateTimeProvenance"
+  },
+  {
+    "name": "com.oracle.labs.mlrg.olcut.provenance.primitives.FloatProvenance"
+  },
+  {
+    "name": "com.oracle.labs.mlrg.olcut.provenance.primitives.IntProvenance"
+  },
+  {
+    "name": "com.oracle.labs.mlrg.olcut.provenance.primitives.LongProvenance"
+  },
+  {
+    "name": "com.oracle.labs.mlrg.olcut.provenance.primitives.StringProvenance"
+  },
+  {
+    "name": "org.tribuo.CategoricalIDInfo",
+    "methods": [
+      {
+        "name": "deserializeFromProto",
+        "parameterTypes": [
+          "int",
+          "java.lang.String",
+          "com.google.protobuf.Any"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "org.tribuo.ImmutableFeatureMap",
+    "methods": [
+      {
+        "name": "deserializeFromProto",
+        "parameterTypes": [
+          "int",
+          "java.lang.String",
+          "com.google.protobuf.Any"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "org.tribuo.RealIDInfo",
+    "methods": [
+      {
+        "name": "deserializeFromProto",
+        "parameterTypes": [
+          "int",
+          "java.lang.String",
+          "com.google.protobuf.Any"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "org.tribuo.common.tree.protos.LeafNodeProto",
+    "methods": [
+      {
+        "name": "getCurIdx",
+        "parameterTypes": []
+      },
+      {
+        "name": "getDefaultInstance",
+        "parameterTypes": []
+      },
+      {
+        "name": "getGeneratesProbabilities",
+        "parameterTypes": []
+      },
+      {
+        "name": "getImpurity",
+        "parameterTypes": []
+      },
+      {
+        "name": "getOutput",
+        "parameterTypes": []
+      },
+      {
+        "name": "getParentIdx",
+        "parameterTypes": []
+      },
+      {
+        "name": "hasOutput",
+        "parameterTypes": []
+      }
+    ]
+  },
+  {
+    "name": "org.tribuo.common.tree.protos.LeafNodeProto$Builder",
+    "methods": [
+      {
+        "name": "clearCurIdx",
+        "parameterTypes": []
+      },
+      {
+        "name": "clearGeneratesProbabilities",
+        "parameterTypes": []
+      },
+      {
+        "name": "clearImpurity",
+        "parameterTypes": []
+      },
+      {
+        "name": "clearOutput",
+        "parameterTypes": []
+      },
+      {
+        "name": "clearParentIdx",
+        "parameterTypes": []
+      },
+      {
+        "name": "getCurIdx",
+        "parameterTypes": []
+      },
+      {
+        "name": "getGeneratesProbabilities",
+        "parameterTypes": []
+      },
+      {
+        "name": "getImpurity",
+        "parameterTypes": []
+      },
+      {
+        "name": "getOutput",
+        "parameterTypes": []
+      },
+      {
+        "name": "getOutputBuilder",
+        "parameterTypes": []
+      },
+      {
+        "name": "getParentIdx",
+        "parameterTypes": []
+      },
+      {
+        "name": "hasOutput",
+        "parameterTypes": []
+      },
+      {
+        "name": "setCurIdx",
+        "parameterTypes": [
+          "int"
+        ]
+      },
+      {
+        "name": "setGeneratesProbabilities",
+        "parameterTypes": [
+          "boolean"
+        ]
+      },
+      {
+        "name": "setImpurity",
+        "parameterTypes": [
+          "double"
+        ]
+      },
+      {
+        "name": "setOutput",
+        "parameterTypes": [
+          "org.tribuo.protos.core.OutputProto"
+        ]
+      },
+      {
+        "name": "setParentIdx",
+        "parameterTypes": [
+          "int"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "org.tribuo.common.tree.protos.SplitNodeProto",
+    "methods": [
+      {
+        "name": "getCurIdx",
+        "parameterTypes": []
+      },
+      {
+        "name": "getDefaultInstance",
+        "parameterTypes": []
+      },
+      {
+        "name": "getGreaterThanIdx",
+        "parameterTypes": []
+      },
+      {
+        "name": "getImpurity",
+        "parameterTypes": []
+      },
+      {
+        "name": "getLessThanOrEqualIdx",
+        "parameterTypes": []
+      },
+      {
+        "name": "getParentIdx",
+        "parameterTypes": []
+      },
+      {
+        "name": "getSplitFeatureIdx",
+        "parameterTypes": []
+      },
+      {
+        "name": "getSplitValue",
+        "parameterTypes": []
+      }
+    ]
+  },
+  {
+    "name": "org.tribuo.common.tree.protos.SplitNodeProto$Builder",
+    "methods": [
+      {
+        "name": "clearCurIdx",
+        "parameterTypes": []
+      },
+      {
+        "name": "clearGreaterThanIdx",
+        "parameterTypes": []
+      },
+      {
+        "name": "clearImpurity",
+        "parameterTypes": []
+      },
+      {
+        "name": "clearLessThanOrEqualIdx",
+        "parameterTypes": []
+      },
+      {
+        "name": "clearParentIdx",
+        "parameterTypes": []
+      },
+      {
+        "name": "clearSplitFeatureIdx",
+        "parameterTypes": []
+      },
+      {
+        "name": "clearSplitValue",
+        "parameterTypes": []
+      },
+      {
+        "name": "getCurIdx",
+        "parameterTypes": []
+      },
+      {
+        "name": "getGreaterThanIdx",
+        "parameterTypes": []
+      },
+      {
+        "name": "getImpurity",
+        "parameterTypes": []
+      },
+      {
+        "name": "getLessThanOrEqualIdx",
+        "parameterTypes": []
+      },
+      {
+        "name": "getParentIdx",
+        "parameterTypes": []
+      },
+      {
+        "name": "getSplitFeatureIdx",
+        "parameterTypes": []
+      },
+      {
+        "name": "getSplitValue",
+        "parameterTypes": []
+      },
+      {
+        "name": "setCurIdx",
+        "parameterTypes": [
+          "int"
+        ]
+      },
+      {
+        "name": "setGreaterThanIdx",
+        "parameterTypes": [
+          "int"
+        ]
+      },
+      {
+        "name": "setImpurity",
+        "parameterTypes": [
+          "double"
+        ]
+      },
+      {
+        "name": "setLessThanOrEqualIdx",
+        "parameterTypes": [
+          "int"
+        ]
+      },
+      {
+        "name": "setParentIdx",
+        "parameterTypes": [
+          "int"
+        ]
+      },
+      {
+        "name": "setSplitFeatureIdx",
+        "parameterTypes": [
+          "int"
+        ]
+      },
+      {
+        "name": "setSplitValue",
+        "parameterTypes": [
+          "double"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "org.tribuo.dataset.DatasetView$DatasetViewProvenance",
+    "methods": [
+      {
+        "name": "<init>",
+        "parameterTypes": [
+          "java.util.Map"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "org.tribuo.ensemble.WeightedEnsembleModel",
+    "methods": [
+      {
+        "name": "deserializeFromProto",
+        "parameterTypes": [
+          "int",
+          "java.lang.String",
+          "com.google.protobuf.Any"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "org.tribuo.protos.core.CategoricalIDInfoProto",
+    "methods": [
+      {
+        "name": "getCount",
+        "parameterTypes": []
+      },
+      {
+        "name": "getDefaultInstance",
+        "parameterTypes": []
+      },
+      {
+        "name": "getId",
+        "parameterTypes": []
+      },
+      {
+        "name": "getKey",
+        "parameterTypes": [
+          "int"
+        ]
+      },
+      {
+        "name": "getKeyCount",
+        "parameterTypes": []
+      },
+      {
+        "name": "getKeyList",
+        "parameterTypes": []
+      },
+      {
+        "name": "getName",
+        "parameterTypes": []
+      },
+      {
+        "name": "getNameBytes",
+        "parameterTypes": []
+      },
+      {
+        "name": "getObservedCount",
+        "parameterTypes": []
+      },
+      {
+        "name": "getObservedValue",
+        "parameterTypes": []
+      },
+      {
+        "name": "getValue",
+        "parameterTypes": [
+          "int"
+        ]
+      },
+      {
+        "name": "getValueCount",
+        "parameterTypes": []
+      },
+      {
+        "name": "getValueList",
+        "parameterTypes": []
+      }
+    ]
+  },
+  {
+    "name": "org.tribuo.protos.core.CategoricalIDInfoProto$Builder",
+    "methods": [
+      {
+        "name": "addKey",
+        "parameterTypes": [
+          "double"
+        ]
+      },
+      {
+        "name": "addValue",
+        "parameterTypes": [
+          "long"
+        ]
+      },
+      {
+        "name": "clearCount",
+        "parameterTypes": []
+      },
+      {
+        "name": "clearId",
+        "parameterTypes": []
+      },
+      {
+        "name": "clearKey",
+        "parameterTypes": []
+      },
+      {
+        "name": "clearName",
+        "parameterTypes": []
+      },
+      {
+        "name": "clearObservedCount",
+        "parameterTypes": []
+      },
+      {
+        "name": "clearObservedValue",
+        "parameterTypes": []
+      },
+      {
+        "name": "clearValue",
+        "parameterTypes": []
+      },
+      {
+        "name": "getCount",
+        "parameterTypes": []
+      },
+      {
+        "name": "getId",
+        "parameterTypes": []
+      },
+      {
+        "name": "getKey",
+        "parameterTypes": [
+          "int"
+        ]
+      },
+      {
+        "name": "getKeyCount",
+        "parameterTypes": []
+      },
+      {
+        "name": "getKeyList",
+        "parameterTypes": []
+      },
+      {
+        "name": "getName",
+        "parameterTypes": []
+      },
+      {
+        "name": "getObservedCount",
+        "parameterTypes": []
+      },
+      {
+        "name": "getObservedValue",
+        "parameterTypes": []
+      },
+      {
+        "name": "getValue",
+        "parameterTypes": [
+          "int"
+        ]
+      },
+      {
+        "name": "getValueCount",
+        "parameterTypes": []
+      },
+      {
+        "name": "getValueList",
+        "parameterTypes": []
+      },
+      {
+        "name": "setCount",
+        "parameterTypes": [
+          "int"
+        ]
+      },
+      {
+        "name": "setId",
+        "parameterTypes": [
+          "int"
+        ]
+      },
+      {
+        "name": "setKey",
+        "parameterTypes": [
+          "int",
+          "double"
+        ]
+      },
+      {
+        "name": "setName",
+        "parameterTypes": [
+          "java.lang.String"
+        ]
+      },
+      {
+        "name": "setNameBytes",
+        "parameterTypes": [
+          "com.google.protobuf.ByteString"
+        ]
+      },
+      {
+        "name": "setObservedCount",
+        "parameterTypes": [
+          "long"
+        ]
+      },
+      {
+        "name": "setObservedValue",
+        "parameterTypes": [
+          "double"
+        ]
+      },
+      {
+        "name": "setValue",
+        "parameterTypes": [
+          "int",
+          "long"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "org.tribuo.protos.core.EnsembleCombinerProto",
+    "methods": [
+      {
+        "name": "getClassName",
+        "parameterTypes": []
+      },
+      {
+        "name": "getClassNameBytes",
+        "parameterTypes": []
+      },
+      {
+        "name": "getSerializedData",
+        "parameterTypes": []
+      },
+      {
+        "name": "getVersion",
+        "parameterTypes": []
+      },
+      {
+        "name": "hasSerializedData",
+        "parameterTypes": []
+      },
+      {
+        "name": "newBuilder",
+        "parameterTypes": []
+      }
+    ]
+  },
+  {
+    "name": "org.tribuo.protos.core.EnsembleCombinerProto$Builder",
+    "methods": [
+      {
+        "name": "clearClassName",
+        "parameterTypes": []
+      },
+      {
+        "name": "clearSerializedData",
+        "parameterTypes": []
+      },
+      {
+        "name": "clearVersion",
+        "parameterTypes": []
+      },
+      {
+        "name": "getClassName",
+        "parameterTypes": []
+      },
+      {
+        "name": "getSerializedData",
+        "parameterTypes": []
+      },
+      {
+        "name": "getSerializedDataBuilder",
+        "parameterTypes": []
+      },
+      {
+        "name": "getVersion",
+        "parameterTypes": []
+      },
+      {
+        "name": "hasSerializedData",
+        "parameterTypes": []
+      },
+      {
+        "name": "setClassName",
+        "parameterTypes": [
+          "java.lang.String"
+        ]
+      },
+      {
+        "name": "setClassNameBytes",
+        "parameterTypes": [
+          "com.google.protobuf.ByteString"
+        ]
+      },
+      {
+        "name": "setSerializedData",
+        "parameterTypes": [
+          "com.google.protobuf.Any"
+        ]
+      },
+      {
+        "name": "setVersion",
+        "parameterTypes": [
+          "int"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "org.tribuo.protos.core.FeatureDomainProto",
+    "methods": [
+      {
+        "name": "getClassName",
+        "parameterTypes": []
+      },
+      {
+        "name": "getClassNameBytes",
+        "parameterTypes": []
+      },
+      {
+        "name": "getSerializedData",
+        "parameterTypes": []
+      },
+      {
+        "name": "getVersion",
+        "parameterTypes": []
+      },
+      {
+        "name": "hasSerializedData",
+        "parameterTypes": []
+      }
+    ]
+  },
+  {
+    "name": "org.tribuo.protos.core.FeatureDomainProto$Builder",
+    "methods": [
+      {
+        "name": "clearClassName",
+        "parameterTypes": []
+      },
+      {
+        "name": "clearSerializedData",
+        "parameterTypes": []
+      },
+      {
+        "name": "clearVersion",
+        "parameterTypes": []
+      },
+      {
+        "name": "getClassName",
+        "parameterTypes": []
+      },
+      {
+        "name": "getSerializedData",
+        "parameterTypes": []
+      },
+      {
+        "name": "getSerializedDataBuilder",
+        "parameterTypes": []
+      },
+      {
+        "name": "getVersion",
+        "parameterTypes": []
+      },
+      {
+        "name": "hasSerializedData",
+        "parameterTypes": []
+      },
+      {
+        "name": "setClassName",
+        "parameterTypes": [
+          "java.lang.String"
+        ]
+      },
+      {
+        "name": "setClassNameBytes",
+        "parameterTypes": [
+          "com.google.protobuf.ByteString"
+        ]
+      },
+      {
+        "name": "setSerializedData",
+        "parameterTypes": [
+          "com.google.protobuf.Any"
+        ]
+      },
+      {
+        "name": "setVersion",
+        "parameterTypes": [
+          "int"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "org.tribuo.protos.core.ImmutableFeatureMapProto",
+    "methods": [
+      {
+        "name": "getDefaultInstance",
+        "parameterTypes": []
+      },
+      {
+        "name": "getInfo",
+        "parameterTypes": [
+          "int"
+        ]
+      },
+      {
+        "name": "getInfoCount",
+        "parameterTypes": []
+      },
+      {
+        "name": "getInfoList",
+        "parameterTypes": []
+      }
+    ]
+  },
+  {
+    "name": "org.tribuo.protos.core.ImmutableFeatureMapProto$Builder",
+    "methods": [
+      {
+        "name": "addInfo",
+        "parameterTypes": [
+          "org.tribuo.protos.core.VariableInfoProto"
+        ]
+      },
+      {
+        "name": "clearInfo",
+        "parameterTypes": []
+      },
+      {
+        "name": "getInfo",
+        "parameterTypes": [
+          "int"
+        ]
+      },
+      {
+        "name": "getInfoBuilder",
+        "parameterTypes": [
+          "int"
+        ]
+      },
+      {
+        "name": "getInfoCount",
+        "parameterTypes": []
+      },
+      {
+        "name": "getInfoList",
+        "parameterTypes": []
+      },
+      {
+        "name": "setInfo",
+        "parameterTypes": [
+          "int",
+          "org.tribuo.protos.core.VariableInfoProto"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "org.tribuo.protos.core.ModelDataProto",
+    "methods": [
+      {
+        "name": "newBuilder",
+        "parameterTypes": []
+      }
+    ]
+  },
+  {
+    "name": "org.tribuo.protos.core.ModelProto",
+    "methods": [
+      {
+        "name": "getClassName",
+        "parameterTypes": []
+      },
+      {
+        "name": "getClassNameBytes",
+        "parameterTypes": []
+      },
+      {
+        "name": "getSerializedData",
+        "parameterTypes": []
+      },
+      {
+        "name": "getVersion",
+        "parameterTypes": []
+      },
+      {
+        "name": "hasSerializedData",
+        "parameterTypes": []
+      },
+      {
+        "name": "newBuilder",
+        "parameterTypes": []
+      }
+    ]
+  },
+  {
+    "name": "org.tribuo.protos.core.ModelProto$Builder",
+    "methods": [
+      {
+        "name": "clearClassName",
+        "parameterTypes": []
+      },
+      {
+        "name": "clearSerializedData",
+        "parameterTypes": []
+      },
+      {
+        "name": "clearVersion",
+        "parameterTypes": []
+      },
+      {
+        "name": "getClassName",
+        "parameterTypes": []
+      },
+      {
+        "name": "getSerializedData",
+        "parameterTypes": []
+      },
+      {
+        "name": "getSerializedDataBuilder",
+        "parameterTypes": []
+      },
+      {
+        "name": "getVersion",
+        "parameterTypes": []
+      },
+      {
+        "name": "hasSerializedData",
+        "parameterTypes": []
+      },
+      {
+        "name": "setClassName",
+        "parameterTypes": [
+          "java.lang.String"
+        ]
+      },
+      {
+        "name": "setClassNameBytes",
+        "parameterTypes": [
+          "com.google.protobuf.ByteString"
+        ]
+      },
+      {
+        "name": "setSerializedData",
+        "parameterTypes": [
+          "com.google.protobuf.Any"
+        ]
+      },
+      {
+        "name": "setVersion",
+        "parameterTypes": [
+          "int"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "org.tribuo.protos.core.OutputDomainProto",
+    "methods": [
+      {
+        "name": "getClassName",
+        "parameterTypes": []
+      },
+      {
+        "name": "getClassNameBytes",
+        "parameterTypes": []
+      },
+      {
+        "name": "getSerializedData",
+        "parameterTypes": []
+      },
+      {
+        "name": "getVersion",
+        "parameterTypes": []
+      },
+      {
+        "name": "hasSerializedData",
+        "parameterTypes": []
+      }
+    ]
+  },
+  {
+    "name": "org.tribuo.protos.core.OutputDomainProto$Builder",
+    "methods": [
+      {
+        "name": "clearClassName",
+        "parameterTypes": []
+      },
+      {
+        "name": "clearSerializedData",
+        "parameterTypes": []
+      },
+      {
+        "name": "clearVersion",
+        "parameterTypes": []
+      },
+      {
+        "name": "getClassName",
+        "parameterTypes": []
+      },
+      {
+        "name": "getSerializedData",
+        "parameterTypes": []
+      },
+      {
+        "name": "getSerializedDataBuilder",
+        "parameterTypes": []
+      },
+      {
+        "name": "getVersion",
+        "parameterTypes": []
+      },
+      {
+        "name": "hasSerializedData",
+        "parameterTypes": []
+      },
+      {
+        "name": "setClassName",
+        "parameterTypes": [
+          "java.lang.String"
+        ]
+      },
+      {
+        "name": "setClassNameBytes",
+        "parameterTypes": [
+          "com.google.protobuf.ByteString"
+        ]
+      },
+      {
+        "name": "setSerializedData",
+        "parameterTypes": [
+          "com.google.protobuf.Any"
+        ]
+      },
+      {
+        "name": "setVersion",
+        "parameterTypes": [
+          "int"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "org.tribuo.protos.core.OutputProto",
+    "methods": [
+      {
+        "name": "getClassName",
+        "parameterTypes": []
+      },
+      {
+        "name": "getClassNameBytes",
+        "parameterTypes": []
+      },
+      {
+        "name": "getSerializedData",
+        "parameterTypes": []
+      },
+      {
+        "name": "getVersion",
+        "parameterTypes": []
+      },
+      {
+        "name": "hasSerializedData",
+        "parameterTypes": []
+      },
+      {
+        "name": "newBuilder",
+        "parameterTypes": []
+      }
+    ]
+  },
+  {
+    "name": "org.tribuo.protos.core.OutputProto$Builder",
+    "methods": [
+      {
+        "name": "clearClassName",
+        "parameterTypes": []
+      },
+      {
+        "name": "clearSerializedData",
+        "parameterTypes": []
+      },
+      {
+        "name": "clearVersion",
+        "parameterTypes": []
+      },
+      {
+        "name": "getClassName",
+        "parameterTypes": []
+      },
+      {
+        "name": "getSerializedData",
+        "parameterTypes": []
+      },
+      {
+        "name": "getSerializedDataBuilder",
+        "parameterTypes": []
+      },
+      {
+        "name": "getVersion",
+        "parameterTypes": []
+      },
+      {
+        "name": "hasSerializedData",
+        "parameterTypes": []
+      },
+      {
+        "name": "setClassName",
+        "parameterTypes": [
+          "java.lang.String"
+        ]
+      },
+      {
+        "name": "setClassNameBytes",
+        "parameterTypes": [
+          "com.google.protobuf.ByteString"
+        ]
+      },
+      {
+        "name": "setSerializedData",
+        "parameterTypes": [
+          "com.google.protobuf.Any"
+        ]
+      },
+      {
+        "name": "setVersion",
+        "parameterTypes": [
+          "int"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "org.tribuo.protos.core.RealIDInfoProto",
+    "methods": [
+      {
+        "name": "getCount",
+        "parameterTypes": []
+      },
+      {
+        "name": "getDefaultInstance",
+        "parameterTypes": []
+      },
+      {
+        "name": "getId",
+        "parameterTypes": []
+      },
+      {
+        "name": "getMax",
+        "parameterTypes": []
+      },
+      {
+        "name": "getMean",
+        "parameterTypes": []
+      },
+      {
+        "name": "getMin",
+        "parameterTypes": []
+      },
+      {
+        "name": "getName",
+        "parameterTypes": []
+      },
+      {
+        "name": "getNameBytes",
+        "parameterTypes": []
+      },
+      {
+        "name": "getSumSquares",
+        "parameterTypes": []
+      }
+    ]
+  },
+  {
+    "name": "org.tribuo.protos.core.RealIDInfoProto$Builder",
+    "methods": [
+      {
+        "name": "clearCount",
+        "parameterTypes": []
+      },
+      {
+        "name": "clearId",
+        "parameterTypes": []
+      },
+      {
+        "name": "clearMax",
+        "parameterTypes": []
+      },
+      {
+        "name": "clearMean",
+        "parameterTypes": []
+      },
+      {
+        "name": "clearMin",
+        "parameterTypes": []
+      },
+      {
+        "name": "clearName",
+        "parameterTypes": []
+      },
+      {
+        "name": "clearSumSquares",
+        "parameterTypes": []
+      },
+      {
+        "name": "getCount",
+        "parameterTypes": []
+      },
+      {
+        "name": "getId",
+        "parameterTypes": []
+      },
+      {
+        "name": "getMax",
+        "parameterTypes": []
+      },
+      {
+        "name": "getMean",
+        "parameterTypes": []
+      },
+      {
+        "name": "getMin",
+        "parameterTypes": []
+      },
+      {
+        "name": "getName",
+        "parameterTypes": []
+      },
+      {
+        "name": "getSumSquares",
+        "parameterTypes": []
+      },
+      {
+        "name": "setCount",
+        "parameterTypes": [
+          "int"
+        ]
+      },
+      {
+        "name": "setId",
+        "parameterTypes": [
+          "int"
+        ]
+      },
+      {
+        "name": "setMax",
+        "parameterTypes": [
+          "double"
+        ]
+      },
+      {
+        "name": "setMean",
+        "parameterTypes": [
+          "double"
+        ]
+      },
+      {
+        "name": "setMin",
+        "parameterTypes": [
+          "double"
+        ]
+      },
+      {
+        "name": "setName",
+        "parameterTypes": [
+          "java.lang.String"
+        ]
+      },
+      {
+        "name": "setNameBytes",
+        "parameterTypes": [
+          "com.google.protobuf.ByteString"
+        ]
+      },
+      {
+        "name": "setSumSquares",
+        "parameterTypes": [
+          "double"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "org.tribuo.protos.core.VariableInfoProto",
+    "methods": [
+      {
+        "name": "getClassName",
+        "parameterTypes": []
+      },
+      {
+        "name": "getClassNameBytes",
+        "parameterTypes": []
+      },
+      {
+        "name": "getSerializedData",
+        "parameterTypes": []
+      },
+      {
+        "name": "getVersion",
+        "parameterTypes": []
+      },
+      {
+        "name": "hasSerializedData",
+        "parameterTypes": []
+      },
+      {
+        "name": "newBuilder",
+        "parameterTypes": []
+      }
+    ]
+  },
+  {
+    "name": "org.tribuo.protos.core.VariableInfoProto$Builder",
+    "methods": [
+      {
+        "name": "clearClassName",
+        "parameterTypes": []
+      },
+      {
+        "name": "clearSerializedData",
+        "parameterTypes": []
+      },
+      {
+        "name": "clearVersion",
+        "parameterTypes": []
+      },
+      {
+        "name": "getClassName",
+        "parameterTypes": []
+      },
+      {
+        "name": "getSerializedData",
+        "parameterTypes": []
+      },
+      {
+        "name": "getSerializedDataBuilder",
+        "parameterTypes": []
+      },
+      {
+        "name": "getVersion",
+        "parameterTypes": []
+      },
+      {
+        "name": "hasSerializedData",
+        "parameterTypes": []
+      },
+      {
+        "name": "setClassName",
+        "parameterTypes": [
+          "java.lang.String"
+        ]
+      },
+      {
+        "name": "setClassNameBytes",
+        "parameterTypes": [
+          "com.google.protobuf.ByteString"
+        ]
+      },
+      {
+        "name": "setSerializedData",
+        "parameterTypes": [
+          "com.google.protobuf.Any"
+        ]
+      },
+      {
+        "name": "setVersion",
+        "parameterTypes": [
+          "int"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "org.tribuo.protos.core.WeightedEnsembleModelProto",
+    "methods": [
+      {
+        "name": "getCombiner",
+        "parameterTypes": []
+      },
+      {
+        "name": "getDefaultInstance",
+        "parameterTypes": []
+      },
+      {
+        "name": "getMetadata",
+        "parameterTypes": []
+      },
+      {
+        "name": "getModels",
+        "parameterTypes": [
+          "int"
+        ]
+      },
+      {
+        "name": "getModelsCount",
+        "parameterTypes": []
+      },
+      {
+        "name": "getModelsList",
+        "parameterTypes": []
+      },
+      {
+        "name": "getWeights",
+        "parameterTypes": [
+          "int"
+        ]
+      },
+      {
+        "name": "getWeightsCount",
+        "parameterTypes": []
+      },
+      {
+        "name": "getWeightsList",
+        "parameterTypes": []
+      },
+      {
+        "name": "hasCombiner",
+        "parameterTypes": []
+      },
+      {
+        "name": "hasMetadata",
+        "parameterTypes": []
+      }
+    ]
+  },
+  {
+    "name": "org.tribuo.protos.core.WeightedEnsembleModelProto$Builder",
+    "methods": [
+      {
+        "name": "addModels",
+        "parameterTypes": [
+          "org.tribuo.protos.core.ModelProto"
+        ]
+      },
+      {
+        "name": "addWeights",
+        "parameterTypes": [
+          "float"
+        ]
+      },
+      {
+        "name": "clearCombiner",
+        "parameterTypes": []
+      },
+      {
+        "name": "clearMetadata",
+        "parameterTypes": []
+      },
+      {
+        "name": "clearModels",
+        "parameterTypes": []
+      },
+      {
+        "name": "clearWeights",
+        "parameterTypes": []
+      },
+      {
+        "name": "getCombiner",
+        "parameterTypes": []
+      },
+      {
+        "name": "getCombinerBuilder",
+        "parameterTypes": []
+      },
+      {
+        "name": "getMetadata",
+        "parameterTypes": []
+      },
+      {
+        "name": "getMetadataBuilder",
+        "parameterTypes": []
+      },
+      {
+        "name": "getModels",
+        "parameterTypes": [
+          "int"
+        ]
+      },
+      {
+        "name": "getModelsBuilder",
+        "parameterTypes": [
+          "int"
+        ]
+      },
+      {
+        "name": "getModelsCount",
+        "parameterTypes": []
+      },
+      {
+        "name": "getModelsList",
+        "parameterTypes": []
+      },
+      {
+        "name": "getWeights",
+        "parameterTypes": [
+          "int"
+        ]
+      },
+      {
+        "name": "getWeightsCount",
+        "parameterTypes": []
+      },
+      {
+        "name": "getWeightsList",
+        "parameterTypes": []
+      },
+      {
+        "name": "hasCombiner",
+        "parameterTypes": []
+      },
+      {
+        "name": "hasMetadata",
+        "parameterTypes": []
+      },
+      {
+        "name": "setCombiner",
+        "parameterTypes": [
+          "org.tribuo.protos.core.EnsembleCombinerProto"
+        ]
+      },
+      {
+        "name": "setMetadata",
+        "parameterTypes": [
+          "org.tribuo.protos.core.ModelDataProto"
+        ]
+      },
+      {
+        "name": "setModels",
+        "parameterTypes": [
+          "int",
+          "org.tribuo.protos.core.ModelProto"
+        ]
+      },
+      {
+        "name": "setWeights",
+        "parameterTypes": [
+          "int",
+          "float"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "org.tribuo.provenance.DatasetProvenance",
+    "methods": [
+      {
+        "name": "<init>",
+        "parameterTypes": [
+          "java.util.Map"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "org.tribuo.provenance.EnsembleModelProvenance",
+    "methods": [
+      {
+        "name": "<init>",
+        "parameterTypes": [
+          "java.util.Map"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "org.tribuo.provenance.ModelProvenance",
+    "methods": [
+      {
+        "name": "<init>",
+        "parameterTypes": [
+          "java.util.Map"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "org.tribuo.provenance.SimpleDataSourceProvenance",
+    "methods": [
+      {
+        "name": "<init>",
+        "parameterTypes": [
+          "java.util.Map"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "org.tribuo.provenance.impl.TrainerProvenanceImpl",
+    "methods": [
+      {
+        "name": "<init>",
+        "parameterTypes": [
+          "java.util.Map"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "org.tribuo.regression.ImmutableRegressionInfo",
+    "methods": [
+      {
+        "name": "deserializeFromProto",
+        "parameterTypes": [
+          "int",
+          "java.lang.String",
+          "com.google.protobuf.Any"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "org.tribuo.regression.RegressionFactory$RegressionFactoryProvenance",
+    "methods": [
+      {
+        "name": "<init>",
+        "parameterTypes": [
+          "java.util.Map"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "org.tribuo.regression.Regressor$DimensionTuple",
+    "methods": [
+      {
+        "name": "deserializeFromProto",
+        "parameterTypes": [
+          "int",
+          "java.lang.String",
+          "com.google.protobuf.Any"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "org.tribuo.regression.ensemble.AveragingCombiner",
+    "methods": [
+      {
+        "name": "deserializeFromProto",
+        "parameterTypes": [
+          "int",
+          "java.lang.String",
+          "com.google.protobuf.Any"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "org.tribuo.regression.protos.DimensionTupleProto",
+    "methods": [
+      {
+        "name": "getDefaultInstance",
+        "parameterTypes": []
+      },
+      {
+        "name": "getName",
+        "parameterTypes": []
+      },
+      {
+        "name": "getNameBytes",
+        "parameterTypes": []
+      },
+      {
+        "name": "getValue",
+        "parameterTypes": []
+      },
+      {
+        "name": "getVariance",
+        "parameterTypes": []
+      }
+    ]
+  },
+  {
+    "name": "org.tribuo.regression.protos.DimensionTupleProto$Builder",
+    "methods": [
+      {
+        "name": "clearName",
+        "parameterTypes": []
+      },
+      {
+        "name": "clearValue",
+        "parameterTypes": []
+      },
+      {
+        "name": "clearVariance",
+        "parameterTypes": []
+      },
+      {
+        "name": "getName",
+        "parameterTypes": []
+      },
+      {
+        "name": "getValue",
+        "parameterTypes": []
+      },
+      {
+        "name": "getVariance",
+        "parameterTypes": []
+      },
+      {
+        "name": "setName",
+        "parameterTypes": [
+          "java.lang.String"
+        ]
+      },
+      {
+        "name": "setNameBytes",
+        "parameterTypes": [
+          "com.google.protobuf.ByteString"
+        ]
+      },
+      {
+        "name": "setValue",
+        "parameterTypes": [
+          "double"
+        ]
+      },
+      {
+        "name": "setVariance",
+        "parameterTypes": [
+          "double"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "org.tribuo.regression.protos.ImmutableRegressionInfoProto",
+    "methods": [
+      {
+        "name": "getCount",
+        "parameterTypes": [
+          "int"
+        ]
+      },
+      {
+        "name": "getCountCount",
+        "parameterTypes": []
+      },
+      {
+        "name": "getCountList",
+        "parameterTypes": []
+      },
+      {
+        "name": "getDefaultInstance",
+        "parameterTypes": []
+      },
+      {
+        "name": "getId",
+        "parameterTypes": [
+          "int"
+        ]
+      },
+      {
+        "name": "getIdCount",
+        "parameterTypes": []
+      },
+      {
+        "name": "getIdList",
+        "parameterTypes": []
+      },
+      {
+        "name": "getLabel",
+        "parameterTypes": [
+          "int"
+        ]
+      },
+      {
+        "name": "getLabelCount",
+        "parameterTypes": []
+      },
+      {
+        "name": "getLabelList",
+        "parameterTypes": []
+      },
+      {
+        "name": "getMax",
+        "parameterTypes": [
+          "int"
+        ]
+      },
+      {
+        "name": "getMaxCount",
+        "parameterTypes": []
+      },
+      {
+        "name": "getMaxList",
+        "parameterTypes": []
+      },
+      {
+        "name": "getMean",
+        "parameterTypes": [
+          "int"
+        ]
+      },
+      {
+        "name": "getMeanCount",
+        "parameterTypes": []
+      },
+      {
+        "name": "getMeanList",
+        "parameterTypes": []
+      },
+      {
+        "name": "getMin",
+        "parameterTypes": [
+          "int"
+        ]
+      },
+      {
+        "name": "getMinCount",
+        "parameterTypes": []
+      },
+      {
+        "name": "getMinList",
+        "parameterTypes": []
+      },
+      {
+        "name": "getOverallCount",
+        "parameterTypes": []
+      },
+      {
+        "name": "getSumSquares",
+        "parameterTypes": [
+          "int"
+        ]
+      },
+      {
+        "name": "getSumSquaresCount",
+        "parameterTypes": []
+      },
+      {
+        "name": "getSumSquaresList",
+        "parameterTypes": []
+      },
+      {
+        "name": "getUnknownCount",
+        "parameterTypes": []
+      }
+    ]
+  },
+  {
+    "name": "org.tribuo.regression.protos.ImmutableRegressionInfoProto$Builder",
+    "methods": [
+      {
+        "name": "addCount",
+        "parameterTypes": [
+          "long"
+        ]
+      },
+      {
+        "name": "addId",
+        "parameterTypes": [
+          "int"
+        ]
+      },
+      {
+        "name": "addLabel",
+        "parameterTypes": [
+          "java.lang.String"
+        ]
+      },
+      {
+        "name": "addMax",
+        "parameterTypes": [
+          "double"
+        ]
+      },
+      {
+        "name": "addMean",
+        "parameterTypes": [
+          "double"
+        ]
+      },
+      {
+        "name": "addMin",
+        "parameterTypes": [
+          "double"
+        ]
+      },
+      {
+        "name": "addSumSquares",
+        "parameterTypes": [
+          "double"
+        ]
+      },
+      {
+        "name": "clearCount",
+        "parameterTypes": []
+      },
+      {
+        "name": "clearId",
+        "parameterTypes": []
+      },
+      {
+        "name": "clearLabel",
+        "parameterTypes": []
+      },
+      {
+        "name": "clearMax",
+        "parameterTypes": []
+      },
+      {
+        "name": "clearMean",
+        "parameterTypes": []
+      },
+      {
+        "name": "clearMin",
+        "parameterTypes": []
+      },
+      {
+        "name": "clearOverallCount",
+        "parameterTypes": []
+      },
+      {
+        "name": "clearSumSquares",
+        "parameterTypes": []
+      },
+      {
+        "name": "clearUnknownCount",
+        "parameterTypes": []
+      },
+      {
+        "name": "getCount",
+        "parameterTypes": [
+          "int"
+        ]
+      },
+      {
+        "name": "getCountCount",
+        "parameterTypes": []
+      },
+      {
+        "name": "getCountList",
+        "parameterTypes": []
+      },
+      {
+        "name": "getId",
+        "parameterTypes": [
+          "int"
+        ]
+      },
+      {
+        "name": "getIdCount",
+        "parameterTypes": []
+      },
+      {
+        "name": "getIdList",
+        "parameterTypes": []
+      },
+      {
+        "name": "getLabel",
+        "parameterTypes": [
+          "int"
+        ]
+      },
+      {
+        "name": "getLabelCount",
+        "parameterTypes": []
+      },
+      {
+        "name": "getLabelList",
+        "parameterTypes": []
+      },
+      {
+        "name": "getMax",
+        "parameterTypes": [
+          "int"
+        ]
+      },
+      {
+        "name": "getMaxCount",
+        "parameterTypes": []
+      },
+      {
+        "name": "getMaxList",
+        "parameterTypes": []
+      },
+      {
+        "name": "getMean",
+        "parameterTypes": [
+          "int"
+        ]
+      },
+      {
+        "name": "getMeanCount",
+        "parameterTypes": []
+      },
+      {
+        "name": "getMeanList",
+        "parameterTypes": []
+      },
+      {
+        "name": "getMin",
+        "parameterTypes": [
+          "int"
+        ]
+      },
+      {
+        "name": "getMinCount",
+        "parameterTypes": []
+      },
+      {
+        "name": "getMinList",
+        "parameterTypes": []
+      },
+      {
+        "name": "getOverallCount",
+        "parameterTypes": []
+      },
+      {
+        "name": "getSumSquares",
+        "parameterTypes": [
+          "int"
+        ]
+      },
+      {
+        "name": "getSumSquaresCount",
+        "parameterTypes": []
+      },
+      {
+        "name": "getSumSquaresList",
+        "parameterTypes": []
+      },
+      {
+        "name": "getUnknownCount",
+        "parameterTypes": []
+      },
+      {
+        "name": "setCount",
+        "parameterTypes": [
+          "int",
+          "long"
+        ]
+      },
+      {
+        "name": "setId",
+        "parameterTypes": [
+          "int",
+          "int"
+        ]
+      },
+      {
+        "name": "setLabel",
+        "parameterTypes": [
+          "int",
+          "java.lang.String"
+        ]
+      },
+      {
+        "name": "setMax",
+        "parameterTypes": [
+          "int",
+          "double"
+        ]
+      },
+      {
+        "name": "setMean",
+        "parameterTypes": [
+          "int",
+          "double"
+        ]
+      },
+      {
+        "name": "setMin",
+        "parameterTypes": [
+          "int",
+          "double"
+        ]
+      },
+      {
+        "name": "setOverallCount",
+        "parameterTypes": [
+          "long"
+        ]
+      },
+      {
+        "name": "setSumSquares",
+        "parameterTypes": [
+          "int",
+          "double"
+        ]
+      },
+      {
+        "name": "setUnknownCount",
+        "parameterTypes": [
+          "int"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "org.tribuo.regression.rtree.IndependentRegressionTreeModel",
+    "methods": [
+      {
+        "name": "deserializeFromProto",
+        "parameterTypes": [
+          "int",
+          "java.lang.String",
+          "com.google.protobuf.Any"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "org.tribuo.regression.rtree.protos.IndependentRegressionTreeModelProto",
+    "methods": [
+      {
+        "name": "getDefaultInstance",
+        "parameterTypes": []
+      },
+      {
+        "name": "getMetadata",
+        "parameterTypes": []
+      },
+      {
+        "name": "hasMetadata",
+        "parameterTypes": []
+      }
+    ]
+  },
+  {
+    "name": "org.tribuo.regression.rtree.protos.IndependentRegressionTreeModelProto$Builder",
+    "methods": [
+      {
+        "name": "clearMetadata",
+        "parameterTypes": []
+      },
+      {
+        "name": "getMetadata",
+        "parameterTypes": []
+      },
+      {
+        "name": "getMetadataBuilder",
+        "parameterTypes": []
+      },
+      {
+        "name": "hasMetadata",
+        "parameterTypes": []
+      },
+      {
+        "name": "setMetadata",
+        "parameterTypes": [
+          "org.tribuo.protos.core.ModelDataProto"
+        ]
+      }
+    ]
+  }
+]

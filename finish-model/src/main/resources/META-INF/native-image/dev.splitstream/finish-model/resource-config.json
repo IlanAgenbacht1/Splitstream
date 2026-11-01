@@ -1,0 +1,9 @@
+{
+  "resources": {
+    "includes": [
+      {
+        "pattern": "\\Qdev/splitstream/finish/finish-time.tribuo\\E"
+      }
+    ]
+  }
+}

@@ -1,0 +1,12 @@
+# The same service on the JVM, for a quick local image without a native build:
+#   ./mvnw -pl race-service -am package -DskipTests
+FROM eclipse-temurin:17-jre
+WORKDIR /work/
+# Quarkus's fast-jar layout, most stable layers first
+COPY target/quarkus-app/lib/ /work/lib/
+COPY target/quarkus-app/*.jar /work/
+COPY target/quarkus-app/app/ /work/app/
+COPY target/quarkus-app/quarkus/ /work/quarkus/
+EXPOSE 8081
+USER 1001
+ENTRYPOINT ["java", "-Dquarkus.http.host=0.0.0.0", "-jar", "/work/quarkus-run.jar"]

@@ -1,0 +1,74 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: race-service
+spec:
+  selector:
+    app.kubernetes.io/name: race-service
+  ports:
+    - name: http
+      port: 8081
+      targetPort: http
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: race-service
+spec:
+  # One instance. Each instance holds the state store for its own partitions, and the leaderboard endpoint only
+  # queries the local store. Two replicas would each answer with half the field until queries go across instances
+  # (on the roadmap).
+  replicas: 1
+  # For the same reason, never run two during a rollout
+  strategy:
+    type: Recreate
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: race-service
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: race-service
+    spec:
+      securityContext:
+        runAsNonRoot: true
+        runAsUser: 1001
+      containers:
+        - name: race-service
+          image: splitstream/race-service
+          ports:
+            - name: http
+              containerPort: 8081
+          env:
+            - name: QUARKUS_KAFKA_STREAMS_BOOTSTRAP_SERVERS
+              value: kafka:9092
+          # A native executable is up in well under a second, so no startup probe
+          livenessProbe:
+            httpGet:
+              path: /q/health/live
+              port: http
+            periodSeconds: 10
+          # Not ready until both topics exist and the Kafka Streams app is running
+          readinessProbe:
+            httpGet:
+              path: /q/health/ready
+              port: http
+            periodSeconds: 5
+          resources:
+            requests:
+              cpu: 100m
+              memory: 128Mi
+            limits:
+              memory: 384Mi
+          securityContext:
+            allowPrivilegeEscalation: false
+            readOnlyRootFilesystem: true
+            capabilities:
+              drop: ["ALL"]
+          volumeMounts:
+            # The Kafka Streams state store (RocksDB). It can be thrown away: it's rebuilt from the changelog topic
+            - name: tmp
+              mountPath: /tmp
+      volumes:
+        - name: tmp
+          emptyDir: {}

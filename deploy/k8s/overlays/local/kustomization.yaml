@@ -1,0 +1,32 @@
+# Everything in a local cluster (kind, minikube, Docker Desktop) with locally built images.
+#   kubectl apply -k deploy/k8s/overlays/local
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+namespace: splitstream
+
+resources:
+  - namespace.yaml
+  - ../../base
+
+images:
+  - name: splitstream/ingest-service
+    newTag: dev
+  - name: splitstream/race-service
+    newTag: dev
+
+# Local credentials only. The hash suffix kustomize adds means a changed secret rolls the pods that use it
+secretGenerator:
+  - name: postgres
+    literals:
+      - username=splitstream
+      - password=splitstream
+
+patches:
+  # Images are loaded into the cluster, not pulled
+  - target:
+      kind: Deployment
+    patch: |-
+      - op: add
+        path: /spec/template/spec/containers/0/imagePullPolicy
+        value: IfNotPresent

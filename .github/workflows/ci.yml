@@ -28,3 +28,66 @@ jobs:
         with:
           name: test-reports
           path: "**/target/surefire-reports/"
+
+  # Build the images (race-service as a GraalVM native executable), deploy everything to a throwaway kind cluster,
+  # and run a simulated race through it
+  kubernetes:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: actions/setup-java@v5
+        with:
+          distribution: temurin
+          java-version: "17"
+          cache: maven
+
+      # The native build runs in a Mandrel builder container, so the runner needs no GraalVM
+      - name: Build jars and the native race-service
+        run: ./mvnw -B package -DskipTests -Dnative -Dquarkus.native.container-build=true
+
+      - name: Build images
+        run: |
+          docker build -t splitstream/ingest-service:dev ingest-service
+          docker build -f race-service/src/main/docker/Dockerfile.native -t splitstream/race-service:dev race-service
+
+      - uses: helm/kind-action@v1
+        with:
+          cluster_name: splitstream
+
+      - name: Deploy
+        run: |
+          kind load docker-image splitstream/ingest-service:dev splitstream/race-service:dev --name splitstream
+          kubectl apply -k deploy/k8s/overlays/local
+          for workload in statefulset/postgres statefulset/kafka deployment/ingest-service deployment/race-service; do
+            kubectl -n splitstream rollout status "$workload" --timeout=5m
+          done
+
+      - name: Smoke test
+        run: deploy/smoke-test.sh
+
+      - name: Startup times and image sizes
+        if: success()
+        run: |
+          {
+            echo "### Startup"
+            echo '```'
+            kubectl -n splitstream logs deployment/race-service | grep -o "race-service .* started in [0-9.]*s" || true
+            kubectl -n splitstream logs deployment/ingest-service | grep -o "Started .* in [0-9.]* seconds" | head -1 || true
+            echo '```'
+            echo "### Images"
+            echo '```'
+            docker images --format "{{.Repository}}:{{.Tag}}  {{.Size}}" | grep splitstream
+            echo '```'
+          } >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Cluster state
+        if: failure()
+        run: |
+          kubectl -n splitstream get all
+          kubectl -n splitstream describe pods
+          for app in ingest-service race-service kafka postgres; do
+            echo "::group::$app logs"
+            kubectl -n splitstream logs -l app.kubernetes.io/name=$app --tail=200 --all-containers || true
+            echo "::endgroup::"
+          done
