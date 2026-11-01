@@ -34,6 +34,18 @@
             <groupId>org.tribuo</groupId>
             <artifactId>tribuo-regression-tree</artifactId>
             <version>${tribuo.version}</version>
+            <exclusions>
+                <!-- OLCUT's interactive shell, never used here. Its native console bindings break the GraalVM
+                     native image of race-service -->
+                <exclusion>
+                    <groupId>org.jline</groupId>
+                    <artifactId>*</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.fusesource.jansi</groupId>
+                    <artifactId>jansi</artifactId>
+                </exclusion>
+            </exclusions>
         </dependency>
 
         <dependency>
