@@ -12,6 +12,7 @@
 
     <modules>
         <module>ingest-service</module>
+        <module>finish-model</module>
         <module>race-service</module>
         <module>device-simulator</module>
     </modules>
