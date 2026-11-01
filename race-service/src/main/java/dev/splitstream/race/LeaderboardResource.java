@@ -3,6 +3,7 @@ package dev.splitstream.race;
 import java.util.ArrayList;
 import java.util.List;
 
+import dev.splitstream.finish.FinishTimePredictor;
 import jakarta.inject.Inject;
 import jakarta.ws.rs.GET;
 import jakarta.ws.rs.NotFoundException;
@@ -29,6 +30,9 @@ public class LeaderboardResource {
     @Inject
     KafkaStreams streams;
 
+    @Inject
+    FinishTimePredictor predictor;
+
     @GET
     public List<LeaderboardEntry> leaderboard(@PathParam("raceId") String raceId) {
         try {
@@ -41,7 +45,7 @@ public class LeaderboardResource {
                                  .prefixScan(raceId + ":", new StringSerializer())) {
                 it.forEachRemaining((KeyValue<String, RunnerProgress> kv) -> runners.add(kv.value));
             }
-            return Leaderboard.rank(runners);
+            return Leaderboard.rank(runners, predictor);
         }
         catch (InvalidStateStoreException ex) {
             // Startup or rebalance. The data is fine, it just isn't queryable this second.

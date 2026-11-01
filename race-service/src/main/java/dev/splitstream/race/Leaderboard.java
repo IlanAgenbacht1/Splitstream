@@ -6,6 +6,8 @@ import java.util.Collection;
 import java.util.Comparator;
 import java.util.List;
 
+import dev.splitstream.finish.FinishTimePredictor;
+
 /** Ranking rules, kept apart from the state store so they're testable without Kafka. */
 final class Leaderboard {
 
@@ -19,15 +21,19 @@ final class Leaderboard {
     private Leaderboard() {
     }
 
-    static List<LeaderboardEntry> rank(Collection<RunnerProgress> runners) {
+    static List<LeaderboardEntry> rank(Collection<RunnerProgress> runners, FinishTimePredictor predictor) {
         List<RunnerProgress> ordered = runners.stream().sorted(RANKING).toList();
         List<LeaderboardEntry> entries = new ArrayList<>(ordered.size());
         for (int i = 0; i < ordered.size(); i++) {
             RunnerProgress runner = ordered.get(i);
             Duration elapsed = runner.elapsed();
+            Long predicted = runner.hasFinished() ? null : predictor
+                    .predictFinish(runner.kmSplits(), runner.raceDistanceMeters())
+                    .map(Duration::toSeconds)
+                    .orElse(null);
             entries.add(new LeaderboardEntry(i + 1, runner.bib(), Math.round(runner.distanceMeters()),
                     elapsed.toSeconds(), pace(elapsed, runner.distanceMeters()), runner.hasFinished(),
-                    runner.finishedAt()));
+                    runner.finishedAt(), predicted));
         }
         return entries;
     }

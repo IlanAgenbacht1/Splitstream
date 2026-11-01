@@ -48,7 +48,7 @@ public final class DeviceSimulator {
         Random random = new Random(seed);
         List<Runner> field = new ArrayList<>();
         for (int i = 0; i < runnerCount; i++) {
-            field.add(Runner.random(String.valueOf(101 + i), random));
+            field.add(Runner.random(String.valueOf(101 + i), distance, random));
         }
 
         System.out.printf("Race %s: %d runners, %d m, %dx speed%n", raceId, runnerCount, distance, speedup);
@@ -156,19 +156,30 @@ public final class DeviceSimulator {
         final double basePace;
         /** How much pace drifts by the finish: positive fades, negative is a negative split. Makes overtakes happen. */
         final double drift;
+        /** Fraction of the race where this runner hits the wall, or 2.0 if they never do. */
+        final double wallAt;
+        final double wallSlowdown;
         final List<String> buffer = new ArrayList<>();
         double meters;
         boolean crossedLine;
         boolean uploadedFinal;
 
-        Runner(String bib, double basePace, double drift) {
+        Runner(String bib, double basePace, double drift, double wallAt, double wallSlowdown) {
             this.bib = bib;
             this.basePace = basePace;
             this.drift = drift;
+            this.wallAt = wallAt;
+            this.wallSlowdown = wallSlowdown;
         }
 
-        static Runner random(String bib, Random random) {
-            return new Runner(bib, 210 + random.nextDouble() * 210, -0.08 + random.nextDouble() * 0.20);
+        /** Same pacing model the finish-time predictor is trained on (finish-model's PacingProfile). */
+        static Runner random(String bib, int raceDistance, Random random) {
+            double drift = -0.08 + random.nextDouble() * 0.23;
+            double wallChance = Math.min(0.9, (0.05 + 3 * Math.max(drift, 0)) * raceDistance / 42_195.0);
+            boolean hitsWall = random.nextDouble() < wallChance;
+            return new Runner(bib, 200 + random.nextDouble() * 220, drift,
+                    hitsWall ? 0.6 + random.nextDouble() * 0.25 : 2.0,
+                    hitsWall ? 0.10 + random.nextDouble() * 0.20 : 0.0);
         }
 
         void tick(Instant now, int raceDistance, Route route) {
@@ -176,7 +187,8 @@ public final class DeviceSimulator {
                 return;
             }
             double progress = Math.min(meters / raceDistance, 1);
-            meters += 1000 / (basePace * (1 + drift * progress));
+            double wall = progress >= wallAt ? wallSlowdown : 0;
+            meters += 1000 / (basePace * (1 + drift * progress + wall));
             double[] fix = route.positionAt(meters);
             buffer.add(String.format(Locale.ROOT, "{\"lat\":%.6f,\"lon\":%.6f,\"recordedAt\":\"%s\"}", fix[0], fix[1], now));
             crossedLine = meters >= raceDistance;

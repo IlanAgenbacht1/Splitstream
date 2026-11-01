@@ -74,6 +74,18 @@ class LeaderboardTopologyTest {
     }
 
     @Test
+    void recordsElapsedTimeAtEachKilometreForTheFinishPrediction() {
+        races.pipeInput("race-3k", new RaceInfo("race-3k", "Test 3K", 3000, GUN));
+        for (long[] fix : new long[][] {{0, 0}, {200, 800}, {400, 1600}, {700, 2600}}) {
+            pings.pipeInput("race-3k:9", new LocationPing("race-3k", "9", fix[1] * DEG_PER_METER, 0, GUN.plusSeconds(fix[0])));
+        }
+
+        // 1000 m is a quarter of the way along the second leg, 2000 m two-fifths along the third
+        assertThat(progress.get("race-3k:9").kmSplits())
+                .containsExactly(Duration.ofSeconds(250), Duration.ofSeconds(520));
+    }
+
+    @Test
     void duplicatesAndLatePingsDoNotAddDistance() {
         ping(0, 0);
         ping(60, 250);

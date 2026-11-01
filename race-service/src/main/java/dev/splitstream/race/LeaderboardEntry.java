@@ -9,5 +9,7 @@ public record LeaderboardEntry(
         long elapsedSeconds,
         String pacePerKm,
         boolean finished,
-        Instant finishedAt) {
+        Instant finishedAt,
+        /** Predicted chip time at the finish. Null once finished, and until there are 3 km of splits to go on. */
+        Long predictedFinishSeconds) {
 }
