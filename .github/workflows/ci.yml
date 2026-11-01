@@ -20,7 +20,13 @@ jobs:
       # Unit tests, Kafka Streams topology tests and the Testcontainers integration tests
       # (the runner has Docker, so nothing is skipped here)
       - name: Build and test
-        run: ./mvnw -B verify
+        run: |
+          ./mvnw -B verify 2>&1 | tee maven.log
+          exit ${PIPESTATUS[0]}
+
+      - name: Report errors
+        if: failure()
+        run: .github/report-errors.sh maven.log
 
       - name: Upload test reports
         if: failure()
@@ -44,7 +50,9 @@ jobs:
 
       # The native build runs in a Mandrel builder container, so the runner needs no GraalVM
       - name: Build jars and the native race-service
-        run: ./mvnw -B package -DskipTests -Dnative -Dquarkus.native.container-build=true
+        run: |
+          ./mvnw -B package -DskipTests -Dnative -Dquarkus.native.container-build=true 2>&1 | tee maven.log
+          exit ${PIPESTATUS[0]}
 
       - name: Build images
         run: |
@@ -81,13 +89,26 @@ jobs:
             echo '```'
           } >> "$GITHUB_STEP_SUMMARY"
 
+      - name: Report build errors
+        if: failure()
+        run: .github/report-errors.sh maven.log
+
       - name: Cluster state
         if: failure()
         run: |
+          kubectl -n splitstream get all > /dev/null 2>&1 || exit 0
           kubectl -n splitstream get all
           kubectl -n splitstream describe pods
           for app in ingest-service race-service kafka postgres; do
             echo "::group::$app logs"
             kubectl -n splitstream logs -l app.kubernetes.io/name=$app --tail=200 --all-containers || true
             echo "::endgroup::"
+          done
+          # The same in brief as annotations, readable on the summary page
+          for app in ingest-service race-service; do
+            {
+              kubectl -n splitstream get pods -l app.kubernetes.io/name=$app
+              kubectl -n splitstream logs -l app.kubernetes.io/name=$app --tail=25 --all-containers 2>&1 | grep -v "^\s*at " || true
+            } > "$app.txt"
+            echo "::error title=$app::$(sed ':a;N;$!ba;s/%/%25/g;s/\r//g;s/\n/%0A/g' "$app.txt")"
           done
