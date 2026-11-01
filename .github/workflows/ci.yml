@@ -78,16 +78,13 @@ jobs:
         if: success()
         run: |
           {
-            echo "### Startup"
-            echo '```'
             kubectl -n splitstream logs deployment/race-service | grep -o "race-service .* started in [0-9.]*s" || true
             kubectl -n splitstream logs deployment/ingest-service | grep -o "Started .* in [0-9.]* seconds" | head -1 || true
-            echo '```'
-            echo "### Images"
-            echo '```'
             docker images --format "{{.Repository}}:{{.Tag}}  {{.Size}}" | grep splitstream
-            echo '```'
-          } >> "$GITHUB_STEP_SUMMARY"
+            kubectl -n splitstream top pods 2> /dev/null || true
+          } > numbers.txt
+          { echo '```'; cat numbers.txt; echo '```'; } >> "$GITHUB_STEP_SUMMARY"
+          echo "::notice title=Startup and images::$(sed ':a;N;$!ba;s/%/%25/g;s/\n/%0A/g' numbers.txt)"
 
       - name: Report build errors
         if: failure()
