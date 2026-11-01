@@ -4,6 +4,8 @@
 #   .github/report-errors.sh maven.log
 log="$1"
 [ -f "$log" ] || exit 0
+# A later step failed, not Maven
+grep -q "BUILD SUCCESS" "$log" && exit 0
 
 # native-image reports its own errors without Maven's [ERROR] prefix
 native=$(grep -E -A 12 '^(Fatal error|Error: )' "$log" | grep -vE '^\s+at (java\.|jdk\.|org\.graalvm|com\.oracle\.svm)' | head -n 60)
